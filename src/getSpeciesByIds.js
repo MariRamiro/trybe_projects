@@ -5,9 +5,7 @@ const getSpeciesByIds = (...ids) => {
   if ( !id ){
     return [];
   }
-  return ids.map((identity) => {
-    id.find((value) => { value === identity})})
-  
+  return ids.map((identity) => id.find((value) => { value === identity}));
 };
 
 module.exports = getSpeciesByIds;
