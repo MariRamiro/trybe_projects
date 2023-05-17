@@ -3,7 +3,7 @@ const data = require('../data/zoo_data');
 const isManager = (id) => {
  const { managers } = data.employees;
  const mangersArray = [];
- return managers.find((manager) => {manager === id;
+ return managers.filter((manager) => {manager === id;
     return mangersArray.push(id)});
 };
 

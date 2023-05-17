@@ -1,11 +1,16 @@
 const data = require('../data/zoo_data');
 
 const getSpeciesByIds = (...ids) => {
-  const { id } = data.species;
-  if ( !id ){
+  const { species } = data;
+  const idsArray = [...ids];
+  const newIdArray = [];
+  if (!ids) {
     return [];
   }
-  return ids.map((identity) => id.find((value) => { value === identity}));
+  idsArray.forEach((id) => {
+    newIdArray.push(species.filter((specie) => specie.id === id));
+  });
+  return newIdArray.flat();
 };
 
 module.exports = getSpeciesByIds;
