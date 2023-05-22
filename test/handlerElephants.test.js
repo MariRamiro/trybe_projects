@@ -17,4 +17,10 @@ describe('Testes da função HandlerElephants', () => {
   it('Para o argumento "undefined", retorna "undefined"', () => {
     expect(handlerElephants()).toBeUndefined();
   });
+  it('Para um argumento inválido retorna null', () => {
+    expect(handlerElephants('cats')).toBe(null);
+  });
+  it('Para uma chave do objeto retorna o proprio valor', () => {
+    expect(handlerElephants('location')).toBe('NW');
+  });
 });
