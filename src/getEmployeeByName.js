@@ -1,14 +1,14 @@
 const data = require('../data/zoo_data');
 
+const { employees } = data;
+
 const getEmployeeByName = (employeeName) => {
-  const { employees } = data;
-  let personData = {};
-  employees.forEach((employee) => {
-    if (employeeName === employee.firstName || employeeName === employee.lastName) {
-      personData = employee;
-    }
-  });
-  return personData;
+  if (!employeeName) {
+    return {};
+  }
+  const worker = employees.find((employee) =>
+    employee.firstName === employeeName || employee.lastName === employeeName);
+  return worker;
 };
 
 module.exports = getEmployeeByName;
